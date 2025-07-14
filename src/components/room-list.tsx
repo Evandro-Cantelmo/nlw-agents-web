@@ -14,7 +14,7 @@ import {
 export function RoomList() {
   const { data, isLoading } = useRooms();
   return (
-    <Card>
+    <Card className="outline-mode">
       <CardHeader>
         <CardTitle>Salas recentes</CardTitle>
         <CardDescription>
@@ -28,17 +28,17 @@ export function RoomList() {
         {data?.map((room) => {
           return (
             <Link
-              className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50"
+              className="flex items-center justify-between rounded-lg border bg-primary p-3 text-primary-foreground shadow-xs hover:bg-primary/90"
               key={room.id}
               to={`/rooms/${room.id}`}
             >
               <div className="flex flex-1 flex-col gap-1">
                 <h3 className="font-medium">{room.name}</h3>
                 <div className="flex items-center gap-2">
-                  <Badge className="text-xs" variant="secondary">
+                  <Badge className="text-xs opacity-80" variant="secondary">
                     {dayjs(room.createdAt).toNow()}
                   </Badge>
-                  <Badge className="text-xs" variant="secondary">
+                  <Badge className="text-xs opacity-80" variant="secondary">
                     {room.questionsCount} pergunta(s)
                   </Badge>
                 </div>

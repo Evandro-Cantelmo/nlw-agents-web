@@ -54,7 +54,7 @@ export function QuestionForm({ roomId }: QuestionFormProps) {
   const { isSubmitting } = form.formState;
 
   return (
-    <Card>
+    <Card className="outline-mode">
       <CardHeader>
         <CardTitle>Fazer uma Pergunta</CardTitle>
         <CardDescription>

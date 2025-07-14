@@ -16,7 +16,7 @@ interface QuestionItemProps {
 
 export function QuestionItem({ question }: QuestionItemProps) {
   return (
-    <Card>
+    <Card className="outline-mode">
       <CardContent>
         <div className="space-y-4">
           {/* Question */}

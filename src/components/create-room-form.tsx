@@ -35,13 +35,13 @@ export function CreateRoomForm() {
     createRoomForm.reset();
   }
   return (
-    <Card>
-      <CardTitle>Criar sala</CardTitle>
-      <CardDescription>
-        Crie uma nova sala para começar a fazer perguntas e receber respostas da
-        I.A.
-      </CardDescription>
-      <CardContent>
+    <Card className="outline-mode">
+      <CardContent className="space-y-4">
+        <CardTitle>Criar sala</CardTitle>
+        <CardDescription>
+          Crie uma nova sala para começar a fazer perguntas e receber respostas
+          da I.A.
+        </CardDescription>
         <Form {...createRoomForm}>
           <form
             className="flex flex-col gap-4"

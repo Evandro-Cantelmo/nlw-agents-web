@@ -118,3 +118,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  @apply h-screen;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1c2c);
+  background-size: 1000% 1000%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .outline-mode {
+    @apply border bg-background shadow-xl dark:bg-input/30 dark:border-input;
+  }
+}

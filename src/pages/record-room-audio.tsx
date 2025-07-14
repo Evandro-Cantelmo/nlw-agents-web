@@ -1,5 +1,6 @@
+import { ArrowLeft } from "lucide-react";
 import { useRef, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 type RoomParams = {
@@ -93,13 +94,21 @@ export function RecordRoomAudio() {
     return <Navigate replace to="/" />;
   }
   return (
-    <div className=" flex h-screen flex-col items-center justify-center gap-3">
-      {isRecording ? (
-        <Button onClick={stopRecording}>Parar áudio</Button>
-      ) : (
-        <Button onClick={startRecording}>Gravar áudio</Button>
-      )}
-      {isRecording ? <p>Gravando...</p> : <p>Pausado</p>}
+    <div className="container mx-auto flex h-screen max-w-4xl flex-col gap-3 px-4 py-8">
+      <Link to={`/rooms/${params.roomId}`}>
+        <Button variant="outline">
+          <ArrowLeft className="mr-2 size-4" />
+          Voltar à sala
+        </Button>
+      </Link>
+      <div className="flex h-full flex-col items-center justify-center">
+        {isRecording ? (
+          <Button onClick={stopRecording}>Parar áudio</Button>
+        ) : (
+          <Button onClick={startRecording}>Gravar áudio</Button>
+        )}
+        {isRecording ? <p>Gravando...</p> : <p>Pausado</p>}
+      </div>
     </div>
   );
 }

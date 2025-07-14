@@ -17,7 +17,7 @@ export function Room() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <div className="mb-8">
           <div className="mb-4 flex items-center justify-between">
@@ -28,7 +28,7 @@ export function Room() {
               </Button>
             </Link>
             <Link to={`/rooms/${params.roomId}/audio`}>
-              <Button className="flex items-center gap-2" variant="secondary">
+              <Button className="flex items-center gap-2" variant="destructive">
                 <Radio className="size-4" />
                 Gravar Áudio
               </Button>
